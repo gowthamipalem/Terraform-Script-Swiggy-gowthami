@@ -33,12 +33,12 @@ resource "aws_security_group" "Project-SG" {
 resource "aws_instance" "web" {
   ami                    = "ami-001f2488b35ca8aad"
   instance_type          = "m7i-flex.large"
-  key_name               = "Kastro"
+  key_name               = "gowthami-swiggy-key"
   vpc_security_group_ids = [aws_security_group.Project-SG.id]
   user_data              = templatefile("./resource.sh", {})
 
   tags = {
-    Name = "Kastro"
+    Name = "gowthami"
   }
   root_block_device {
     volume_size = 30
